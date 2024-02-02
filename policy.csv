@@ -1,0 +1,19 @@
+p, ROLE/vip/owner, vip/, RGROUP/vip/item_read, allow
+p, ROLE/vip/owner, vip/, RGROUP/vip/item_write, allow
+p, ROLE/vip/owner, vip/, RESOURCE/GET/api/vip/item, allow
+p, ROLE/vip/owner, abc/, RESOURCE/GET/api/vip/item, allow
+
+g, USER/bob, ROLE/vip/owner, vip/AFK/
+g, USER/alice, ROLE/vip/owner, vip/AFK/AFK-cn
+g, USER/amy, ROLE/vip/owner, vip/ROK
+
+g2, RESOURCE/GET/api/vip/changelog,  RGROUP/vip/item_read
+g2, RESOURCE/GET/api/vip/items, RGROUP/vip/item_read
+g2, RESOURCE/GET/api/vip/item/:itemId, RGROUP/vip/item_read
+g2, RESOURCE/read/web/vip/itemPage, RGROUP/vip/item_read
+
+g2, RESOURCE/POST/api/vip/item/:itemId, RGROUP/vip/item_write
+g2, RESOURCE/write/web/vip/itemPage, RGROUP/vip/item_write
+
+g2, RESOURCE/DELETE/api/vip/item/:itemId, RGROUP/vip/item_delete
+g2, RESOURCE/delete/web/vip/itemPage, RGROUP/vip/item_delete
